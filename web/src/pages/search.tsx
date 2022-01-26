@@ -1,7 +1,7 @@
 // import { gql } from "@apollo/client"
 // import client from "../clients/apollo"
 
-import type { Place } from "./index"
+import type { Place } from "./"
 
 interface SearchProps {
   places: Place[]

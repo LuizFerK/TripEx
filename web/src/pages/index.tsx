@@ -1,9 +1,17 @@
-// import { gql } from "@apollo/client"
-// import client from "../clients/apollo"
+import { gql } from "@apollo/client"
+import client from "../clients/apollo"
+
+import Card from "../components/card"
+
+import { Container } from "../styles/pages"
 
 export interface Place {
-  id: number
+  id: string
   name: string
+  image: string
+  location: string
+  description: string
+  maxGuests: number
 }
 
 interface HomeProps {
@@ -12,28 +20,29 @@ interface HomeProps {
 
 export default function Home({ places }: HomeProps) {
   return (
-    <>
-      <h1>Home</h1>
+    <Container>
       {places.map(place => (
-        <p key={place.id}>{place.name}</p>
+        <Card key={place.id} place={place} />
       ))}
-    </>
+    </Container>
   )
 }
 
 export async function getStaticProps() {
-  // const { data } = await client.query<HomeProps>({
-  //   query: gql`
-  //     query Places {
-  //       places {
-  //         id
-  //         name
-  //       }
-  //     }
-  //   `
-  // })
-
-  const data = { places: [{ id: 0, name: "place" }] }
+  const { data } = await client.query<HomeProps>({
+    query: gql`
+      query Places {
+        places {
+          id
+          name
+          location
+          description
+          maxGuests
+          image
+        }
+      }
+    `
+  })
 
   return {
     props: {

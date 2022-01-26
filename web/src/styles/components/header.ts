@@ -10,7 +10,8 @@ export const Container = styled("header", {
   position: "fixed",
   left: 0,
   right: 0,
-  top: 0
+  top: 0,
+  zIndex: 10
 })
 
 export const Title = styled("span", {
