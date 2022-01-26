@@ -4,9 +4,16 @@ export default globalCss({
   "*": {
     margin: 0,
     padding: 0,
-    boxSizing: "border-box",
+    boxSizing: "border-box"
+  },
+  body: {
     backgroundColor: "$background",
-    color: "$black",
-    fontFamily: "$arial"
+    fontFamily: "$arial",
+    color: "$black"
+  },
+  a: {
+    cursor: "pointer",
+    textDecoration: "none",
+    color: "$white"
   }
 })

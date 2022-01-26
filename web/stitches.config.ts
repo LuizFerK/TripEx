@@ -3,8 +3,12 @@ import { createStitches } from "@stitches/react"
 export const { styled, getCssText, globalCss } = createStitches({
   theme: {
     colors: {
-      background: "#f4f4f4",
-      black: "#060606"
+      background: "#EDEDED",
+      white: "#f4f4f4",
+      black: "#060606",
+      primary: "#343A40",
+      secondary: "#17A2B8",
+      blueLinear: "linear-gradient(112deg, #12A79F, #09B175)"
     },
     fonts: {
       sans: "Inter, sans-serif",

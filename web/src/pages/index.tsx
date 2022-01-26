@@ -1,5 +1,5 @@
-import { gql } from "@apollo/client"
-import client from "../clients/apollo"
+// import { gql } from "@apollo/client"
+// import client from "../clients/apollo"
 
 interface Place {
   id: number
@@ -22,16 +22,18 @@ const Home = ({ places }: HomeProps) => {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query<HomeProps>({
-    query: gql`
-      query Places {
-        places {
-          id
-          name
-        }
-      }
-    `
-  })
+  // const { data } = await client.query<HomeProps>({
+  //   query: gql`
+  //     query Places {
+  //       places {
+  //         id
+  //         name
+  //       }
+  //     }
+  //   `
+  // })
+
+  const data = { places: [{ id: 0, name: "place" }] }
 
   return {
     props: {
