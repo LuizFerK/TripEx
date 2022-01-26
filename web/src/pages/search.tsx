@@ -1,19 +1,16 @@
 // import { gql } from "@apollo/client"
 // import client from "../clients/apollo"
 
-export interface Place {
-  id: number
-  name: string
-}
+import type { Place } from "./index"
 
-interface HomeProps {
+interface SearchProps {
   places: Place[]
 }
 
-export default function Home({ places }: HomeProps) {
+export default function Search({ places }: SearchProps) {
   return (
     <>
-      <h1>Home</h1>
+      <h1>Search</h1>
       {places.map(place => (
         <p key={place.id}>{place.name}</p>
       ))}
@@ -22,7 +19,7 @@ export default function Home({ places }: HomeProps) {
 }
 
 export async function getStaticProps() {
-  // const { data } = await client.query<HomeProps>({
+  // const { data } = await client.query<SearchProps>({
   //   query: gql`
   //     query Places {
   //       places {

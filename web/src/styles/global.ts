@@ -14,6 +14,6 @@ export default globalCss({
   a: {
     cursor: "pointer",
     textDecoration: "none",
-    color: "$white"
+    color: "$black"
   }
 })
