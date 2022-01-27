@@ -11,6 +11,9 @@ export const Content = styled("div", {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  a: {
+    color: "$secondary"
+  },
   form: {
     width: "100%",
     marginTop: 30
