@@ -49,26 +49,6 @@ export const Tab = styled("a", {
   }
 })
 
-export const Button = styled("button", {
-  all: "unset",
-  display: "inline-flex",
-  alignItems: "center",
-  borderRadius: 4,
-  padding: "0 15px",
-  fontSize: 15,
-  height: 35,
-  backgroundColor: "$primary",
-  border: "1px solid $white",
-  color: "$white",
-  cursor: "pointer",
-  transition: "0.2s",
-
-  "&:hover": {
-    backgroundColor: "$white",
-    color: "$black"
-  }
-})
-
 export const Margin = styled("div", {
   marginBottom: 85
 })

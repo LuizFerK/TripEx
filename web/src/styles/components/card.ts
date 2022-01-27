@@ -62,29 +62,10 @@ export const Badge = styled("p", {
   color: "$white"
 })
 
-export const Button = styled("button", {
-  all: "unset",
-  display: "inline-flex",
-  alignItems: "center",
-  borderRadius: 4,
-  padding: "0 15px",
-  fontSize: 15,
-  height: 35,
-  border: "1px solid $white",
-  color: "$white",
-  cursor: "pointer",
-  transition: "0.2s",
-
-  "&:hover": {
-    backgroundColor: "$white",
-    color: "$black"
-  }
-})
-
 export const Sleeps = styled("div", {
   backgroundColor: "$white",
   paddingInline: 10,
-  height: 35,
+  height: 37,
   borderRadius: 4,
   display: "flex",
   alignItems: "center",

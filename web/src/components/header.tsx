@@ -1,11 +1,7 @@
 import Link from "next/link"
-import {
-  Container,
-  Title,
-  Tab,
-  Button,
-  Margin
-} from "../styles/components/header"
+import Button from "./button"
+
+import { Container, Title, Tab, Margin } from "../styles/components/header"
 
 export default function Header() {
   return (
@@ -24,7 +20,9 @@ export default function Header() {
             <Tab>Sign In</Tab>
           </Link>
           <Link passHref href="/signup">
-            <Button as="a">Sign Up</Button>
+            <a>
+              <Button>Sign Up</Button>
+            </a>
           </Link>
         </nav>
       </Container>

@@ -8,6 +8,7 @@ export const { styled, getCssText, globalCss } = createStitches({
       black: "#060606",
       primary: "#343A40",
       secondary: "#17A2B8",
+      secondaryDark: "#118091",
       blueLinear: "linear-gradient(112deg, #12A79F, #09B175)"
     },
     fonts: {

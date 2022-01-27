@@ -50,21 +50,3 @@ export const Input = styled("input", {
   height: 35,
   "&:focus": { boxShadow: `0 0 0 2px ${"$secondary"}` }
 })
-
-export const Button = styled("button", {
-  all: "unset",
-  textAlign: "center",
-  width: "100%",
-  alignItems: "center",
-  borderRadius: 4,
-  fontSize: 15,
-  height: 35,
-  backgroundColor: "$secondary",
-  color: "$white",
-  cursor: "pointer",
-  transition: "0.2s",
-
-  "&:hover": {
-    backgroundColor: "$primary"
-  }
-})

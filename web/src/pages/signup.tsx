@@ -1,12 +1,12 @@
 import Link from "next/link"
+import Button from "../components/button"
 
 import {
   Container,
   Content,
   Fieldset,
   Label,
-  Input,
-  Button
+  Input
 } from "../styles/pages/signin"
 
 export default function SignUp() {
@@ -30,7 +30,7 @@ export default function SignUp() {
             <Label htmlFor="password">Password</Label>
             <Input id="password" />
           </Fieldset>
-          <Button>Sign Up</Button>
+          <Button type="blue">Sign Up</Button>
         </form>
       </Content>
     </Container>

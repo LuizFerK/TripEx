@@ -15,5 +15,8 @@ export default globalCss({
     cursor: "pointer",
     textDecoration: "none",
     color: "$black"
+  },
+  button: {
+    cursor: "pointer"
   }
 })

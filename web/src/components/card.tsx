@@ -3,15 +3,10 @@ import Link from "next/link"
 
 import { PersonIcon } from "@radix-ui/react-icons"
 
-import {
-  Container,
-  Content,
-  Badge,
-  Button,
-  Sleeps
-} from "../styles/components/card"
+import { Container, Content, Badge, Sleeps } from "../styles/components/card"
 
 import { Place } from "../pages"
+import Button from "./button"
 
 interface CardProps {
   place: Place
@@ -39,7 +34,9 @@ export default function Card({ place }: CardProps) {
               <strong>{place.maxGuests}</strong>
             </Sleeps>
             <Link passHref href="/signup">
-              <Button as="a">Book now</Button>
+              <a>
+                <Button>Book now</Button>
+              </a>
             </Link>
           </footer>
         </div>
