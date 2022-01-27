@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 import { Container } from "../styles/components/button"
 
 interface ButtonProps {
-  type?: "white" | "blue"
+  type?: "white" | "black" | "blue"
   children: ReactNode
 }
 

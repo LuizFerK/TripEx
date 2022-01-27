@@ -21,6 +21,17 @@ export const Container = styled("button", {
           color: "$black"
         }
       },
+      black: {
+        border: "1px solid $primary",
+        color: "$primary",
+        textAlign: "center",
+        width: "fit-content",
+        paddingInline: 15,
+        "&:hover": {
+          backgroundColor: "$primary",
+          color: "$white"
+        }
+      },
       blue: {
         width: "100%",
         textAlign: "center",

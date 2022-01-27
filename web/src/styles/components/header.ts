@@ -48,7 +48,3 @@ export const Tab = styled("a", {
     }
   }
 })
-
-export const Margin = styled("div", {
-  marginBottom: 85
-})

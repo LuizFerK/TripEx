@@ -1,12 +1,15 @@
 import { styled } from "../../../stitches.config"
 
+const cardSize = "22vw"
+const cardSizeBp4 = "28vw"
+
 export const Container = styled("div", {
   width: "100%",
   borderRadius: 8,
   overflow: "hidden",
   position: "relative",
   transition: "0.2s",
-  height: "20.8vw",
+  height: cardSize,
   maxHeight: 390,
 
   img: {
@@ -27,7 +30,7 @@ export const Container = styled("div", {
   },
 
   "@bp4": {
-    height: "28vw"
+    height: cardSizeBp4
   }
 })
 
@@ -38,7 +41,7 @@ export const Content = styled("div", {
   opacity: 0,
   position: "absolute",
   width: "100%",
-  height: "20.8vw",
+  height: cardSize,
   padding: 15,
   transition: "0.2s",
   span: {
@@ -57,7 +60,7 @@ export const Content = styled("div", {
   },
 
   "@bp4": {
-    height: "28vw"
+    height: cardSizeBp4
   }
 })
 

@@ -9,7 +9,8 @@ export default globalCss({
   body: {
     backgroundColor: "$background",
     fontFamily: "$arial",
-    color: "$black"
+    color: "$black",
+    marginTop: 85
   },
   a: {
     cursor: "pointer",
@@ -18,5 +19,8 @@ export default globalCss({
   },
   button: {
     cursor: "pointer"
+  },
+  "input:-webkit-autofill": {
+    "-webkit-background-clip": "text"
   }
 })
