@@ -1,12 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
-
 import { PersonIcon } from "@radix-ui/react-icons"
+import Button from "./button"
 
 import { Container, Content, Badge, Sleeps } from "../styles/components/card"
 
 import { Place } from "../pages"
-import Button from "./button"
 
 interface CardProps {
   place: Place

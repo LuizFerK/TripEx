@@ -2,11 +2,13 @@ import { styled } from "../../../stitches.config"
 
 export const Container = styled("div", {
   display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
   placeItems: "center",
-  paddingTop: 50,
-  gap: 12,
-  width: "65%",
-  margin: "auto",
-  maxWidth: 1000
+  height: "calc(100vh - 85px)",
+  textAlign: "center",
+  h1: {
+    marginBottom: 15
+  },
+  a: {
+    color: "$secondary"
+  }
 })

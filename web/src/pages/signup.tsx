@@ -1,13 +1,8 @@
 import Link from "next/link"
 import Button from "../components/button"
+import Input from "../components/input"
 
-import {
-  Container,
-  Content,
-  Fieldset,
-  Label,
-  Input
-} from "../styles/pages/signin"
+import { Container, Content } from "../styles/pages/sign"
 
 export default function SignUp() {
   return (
@@ -18,18 +13,9 @@ export default function SignUp() {
           <a>Have an account?</a>
         </Link>
         <form>
-          <Fieldset>
-            <Label htmlFor="username">Username</Label>
-            <Input id="username" />
-          </Fieldset>
-          <Fieldset>
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" />
-          </Fieldset>
-          <Fieldset>
-            <Label htmlFor="password">Password</Label>
-            <Input id="password" />
-          </Fieldset>
+          <Input name="username" />
+          <Input name="email" type="email" />
+          <Input name="password" type="password" />
           <Button type="blue">Sign Up</Button>
         </form>
       </Content>

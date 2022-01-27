@@ -9,7 +9,7 @@ export const { styled, getCssText, globalCss } = createStitches({
       primary: "#343A40",
       secondary: "#17A2B8",
       secondaryDark: "#118091",
-      blueLinear: "linear-gradient(112deg, #12A79F, #09B175)"
+      blueLinear: "linear-gradient(45deg, #17A2B8, #09B175)"
     },
     fonts: {
       sans: "Inter, sans-serif",
@@ -53,5 +53,11 @@ export const { styled, getCssText, globalCss } = createStitches({
     shadows: {},
     zIndices: {},
     transitions: {}
+  },
+  media: {
+    bp1: "(min-width: 640px)",
+    bp2: "(min-width: 768px)",
+    bp3: "(min-width: 1024px)",
+    bp4: "(min-width: 1360px)"
   }
 })

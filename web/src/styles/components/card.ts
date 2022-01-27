@@ -2,11 +2,12 @@ import { styled } from "../../../stitches.config"
 
 export const Container = styled("div", {
   width: "100%",
-  height: 300,
   borderRadius: 8,
   overflow: "hidden",
   position: "relative",
   transition: "0.2s",
+  height: "20.8vw",
+  maxHeight: 390,
 
   img: {
     objectFit: "cover"
@@ -23,6 +24,10 @@ export const Container = styled("div", {
     div: {
       opacity: 1
     }
+  },
+
+  "@bp4": {
+    height: "28vw"
   }
 })
 
@@ -33,7 +38,7 @@ export const Content = styled("div", {
   opacity: 0,
   position: "absolute",
   width: "100%",
-  height: 300,
+  height: "20.8vw",
   padding: 15,
   transition: "0.2s",
   span: {
@@ -49,14 +54,19 @@ export const Content = styled("div", {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center"
+  },
+
+  "@bp4": {
+    height: "28vw"
   }
 })
 
 export const Badge = styled("p", {
-  backgroundColor: "$secondary",
+  background: "$blueLinear",
   width: "fit-content",
   paddingInline: 15,
-  borderRadius: "$round",
+  paddingBlock: 1,
+  borderRadius: 5,
   marginTop: 4,
   fontSize: 14,
   color: "$white"

@@ -1,26 +1,6 @@
 import { styled } from "../../../stitches.config"
 
-export const Container = styled("div", {
-  display: "grid",
-  placeItems: "center",
-  height: "calc(100vh - 150px)"
-})
-
-export const Content = styled("div", {
-  width: 300,
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  a: {
-    color: "$secondary"
-  },
-  form: {
-    width: "100%",
-    marginTop: 30
-  }
-})
-
-export const Fieldset = styled("fieldset", {
+export const Container = styled("fieldset", {
   all: "unset",
   marginBottom: 15,
   width: "100%",
@@ -37,7 +17,7 @@ export const Label = styled("label", {
   display: "block"
 })
 
-export const Input = styled("input", {
+export const TextInput = styled("input", {
   all: "unset",
   flex: "1 0 auto",
   borderRadius: 4,

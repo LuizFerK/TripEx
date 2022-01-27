@@ -1,5 +1,7 @@
-// import { gql } from "@apollo/client"
-// import client from "../clients/apollo"
+import { getPlaces } from "../clients/apollo"
+import Card from "../components/card"
+
+import { Container } from "../styles/pages/search"
 
 import type { Place } from "./"
 
@@ -9,32 +11,20 @@ interface SearchProps {
 
 export default function Search({ places }: SearchProps) {
   return (
-    <>
-      <h1>Search</h1>
+    <Container>
       {places.map(place => (
-        <p key={place.id}>{place.name}</p>
+        <Card key={place.id} place={place} />
       ))}
-    </>
+    </Container>
   )
 }
 
 export async function getStaticProps() {
-  // const { data } = await client.query<SearchProps>({
-  //   query: gql`
-  //     query Places {
-  //       places {
-  //         id
-  //         name
-  //       }
-  //     }
-  //   `
-  // })
-
-  const data = { places: [{ id: 0, name: "place" }] }
+  const places = await getPlaces()
 
   return {
     props: {
-      places: data.places
+      places
     }
   }
 }

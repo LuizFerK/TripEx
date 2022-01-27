@@ -1,6 +1,4 @@
-import { gql } from "@apollo/client"
-import client from "../clients/apollo"
-
+import { getPlaces } from "../clients/apollo"
 import Card from "../components/card"
 
 import { Container } from "../styles/pages"
@@ -29,24 +27,11 @@ export default function Home({ places }: HomeProps) {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query<HomeProps>({
-    query: gql`
-      query Places {
-        places {
-          id
-          name
-          location
-          description
-          maxGuests
-          image
-        }
-      }
-    `
-  })
+  const places = await getPlaces()
 
   return {
     props: {
-      places: data.places
+      places
     }
   }
 }
