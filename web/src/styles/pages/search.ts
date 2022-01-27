@@ -27,7 +27,7 @@ export const Aside = styled("aside", {
     marginLeft: 2
   },
 
-  button: {
+  "> button": {
     margin: "auto"
   }
 })

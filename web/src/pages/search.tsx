@@ -1,9 +1,10 @@
 import { getPlaces } from "../clients/apollo"
+import "react-day-picker/lib/style.css"
 import Button from "../components/button"
 import Card from "../components/card"
 import Input from "../components/input"
+import Counter from "../components/counter"
 import DayPicker from "../components/dayPicker"
-import "react-day-picker/lib/style.css"
 
 import { Container, Aside, Grid } from "../styles/pages/search"
 
@@ -24,6 +25,7 @@ export default function Search({ places }: SearchProps) {
           <span>When</span>
           <DayPicker />
           <span>How many</span>
+          <Counter />
           <span>What</span>
           <Button type="black">Clear all</Button>
         </Aside>
