@@ -10,6 +10,7 @@ export interface Place {
   location: string
   description: string
   maxGuests: number
+  slug: string
 }
 
 interface HomeProps {

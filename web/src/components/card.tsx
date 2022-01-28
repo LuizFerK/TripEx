@@ -32,7 +32,7 @@ export default function Card({ place }: CardProps) {
               <PersonIcon />
               <strong>{place.maxGuests}</strong>
             </Sleeps>
-            <Link passHref href="/signup">
+            <Link passHref href={`/place/${place.slug}`}>
               <a>
                 <Button>Book now</Button>
               </a>

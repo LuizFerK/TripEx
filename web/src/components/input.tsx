@@ -22,7 +22,7 @@ export default function Input({ name, icon, type, label = true }: InputProps) {
         {icon === "search" && <MagnifyingGlassIcon />}
       </IconContainer>
       {label && <Label htmlFor="name">{upperCaseFirstLetter(name)}</Label>}
-      <TextInput id="name" type={type || "text"} variant="withIcon" />
+      <TextInput id="name" type={type || "text"} variant={icon && "withIcon"} />
     </Container>
   )
 }
