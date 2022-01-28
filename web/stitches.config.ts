@@ -6,6 +6,7 @@ export const { styled, getCssText, globalCss } = createStitches({
       background: "#EDEDED",
       white: "#f4f4f4",
       black: "#060606",
+      gray: "#c4c4c4",
       grayLight: "#c4c4c440",
       primary: "#343A40",
       secondary: "#17A2B8",
@@ -59,6 +60,7 @@ export const { styled, getCssText, globalCss } = createStitches({
     bp1: "(min-width: 640px)",
     bp2: "(min-width: 768px)",
     bp3: "(min-width: 1024px)",
-    bp4: "(min-width: 1360px)"
+    bp4: "(min-width: 1180px)",
+    bp5: "(min-width: 1360px)"
   }
 })

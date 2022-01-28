@@ -29,7 +29,7 @@ export const Container = styled("div", {
     }
   },
 
-  "@bp4": {
+  "@bp5": {
     height: cardSizeBp4
   }
 })
@@ -42,6 +42,7 @@ export const Content = styled("div", {
   position: "absolute",
   width: "100%",
   height: cardSize,
+  maxHeight: 390,
   padding: 15,
   transition: "0.2s",
   span: {
@@ -59,7 +60,7 @@ export const Content = styled("div", {
     alignItems: "center"
   },
 
-  "@bp4": {
+  "@bp5": {
     height: cardSizeBp4
   }
 })

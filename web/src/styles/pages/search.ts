@@ -9,7 +9,13 @@ export const Container = styled("div", {
 
   "> div": {
     textAlign: "start",
-    display: "flex"
+    display: "flex",
+    width: "95%",
+    margin: "auto",
+    justifyContent: "center",
+    "@bp4": {
+      width: "80%"
+    }
   }
 })
 
@@ -21,7 +27,7 @@ export const Aside = styled("aside", {
   padding: 20,
   borderRadius: 8,
 
-  span: {
+  "> span": {
     textTransform: "uppercase",
     marginBottom: 8,
     marginLeft: 2
@@ -34,10 +40,13 @@ export const Aside = styled("aside", {
 
 export const Grid = styled("div", {
   display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
+  gridTemplateColumns: "repeat(2, 1fr)",
   placeItems: "center",
   gap: 12,
   width: "65%",
-  margin: "auto",
-  maxWidth: 1000
+  marginLeft: "3%",
+  maxWidth: 1000,
+  "@bp3": {
+    gridTemplateColumns: "repeat(3, 1fr)"
+  }
 })

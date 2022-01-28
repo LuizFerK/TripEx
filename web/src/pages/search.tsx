@@ -5,6 +5,7 @@ import Card from "../components/card"
 import Input from "../components/input"
 import Counter from "../components/counter"
 import DayPicker from "../components/dayPicker"
+import Checkbox from "../components/checkbox"
 
 import { Container, Aside, Grid } from "../styles/pages/search"
 
@@ -27,6 +28,9 @@ export default function Search({ places }: SearchProps) {
           <span>How many</span>
           <Counter />
           <span>What</span>
+          <Checkbox name="pet friendly" />
+          <Checkbox name="pool" />
+          <Checkbox name="wifi" />
           <Button type="black">Clear all</Button>
         </Aside>
         <Grid>
