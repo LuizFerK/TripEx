@@ -56,6 +56,14 @@ export async function getPlaceBySlug(slug: string) {
         place(slug: "${slug}") {
           id
           name
+          location
+          image
+          description
+          maxGuests
+          wifi
+          pool
+          petFriendly
+          pricePerNight
         }
       }
     `

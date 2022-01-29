@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Picker, { DateUtils, RangeModifier } from "react-day-picker"
+import "react-day-picker/lib/style.css"
 
 import { Container } from "../styles/components/dayPicker"
 

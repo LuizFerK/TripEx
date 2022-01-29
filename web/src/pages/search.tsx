@@ -1,5 +1,4 @@
 import { getPlaces } from "../clients/apollo"
-import "react-day-picker/lib/style.css"
 import Button from "../components/button"
 import Card from "../components/card"
 import Input from "../components/input"

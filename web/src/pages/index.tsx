@@ -11,6 +11,10 @@ export interface Place {
   description: string
   maxGuests: number
   slug: string
+  wifi: boolean
+  pool: boolean
+  petFriendly: boolean
+  pricePerNight: string
 }
 
 interface HomeProps {
