@@ -23,7 +23,6 @@ export default function SignIn() {
           <form>
             <Input name="username" placeholder="John Doe" />
             <Input name="password" type="password" placeholder="••••••" />
-            <br />
             <Button>Sign In</Button>
           </form>
           <p>

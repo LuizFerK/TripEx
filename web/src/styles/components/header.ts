@@ -50,16 +50,31 @@ export const Tab = styled("a", {
     content: "",
     height: 2,
     position: "absolute",
-    left: 0,
-    right: 0,
-    bottom: 0,
+    left: "20%",
+    right: "20%",
+    bottom: 15,
     transform: "scale(0)",
-    backgroundColor: "$white",
     transition: "transform 0.2s"
   },
   "&:hover": {
     "&::before": {
       transform: "scale(1)"
+    }
+  },
+
+  variants: {
+    type: {
+      selected: {
+        "&::before": {
+          background: "$blueLinear",
+          transform: "scale(1)"
+        }
+      },
+      unselected: {
+        "&::before": {
+          background: "$black"
+        }
+      }
     }
   }
 })

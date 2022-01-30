@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 import Image from "next/image"
 import Link from "next/link"
 import Button from "./button"
@@ -5,6 +6,8 @@ import Button from "./button"
 import { Container, Tab } from "../styles/components/header"
 
 export default function Header() {
+  const { pathname } = useRouter()
+
   return (
     <Container>
       <Link passHref href="/">
@@ -18,10 +21,14 @@ export default function Header() {
       </Link>
       <nav>
         <Link passHref href="/search">
-          <Tab>Search</Tab>
+          <Tab type={pathname === "/search" ? "selected" : "unselected"}>
+            Search
+          </Tab>
         </Link>
         <Link passHref href="/signin">
-          <Tab>Sign In</Tab>
+          <Tab type={pathname === "/signin" ? "selected" : "unselected"}>
+            Sign In
+          </Tab>
         </Link>
         <Link passHref href="/signup">
           <a>

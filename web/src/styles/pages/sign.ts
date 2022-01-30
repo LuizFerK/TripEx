@@ -65,7 +65,10 @@ export const Content = styled("aside", {
     },
     form: {
       width: "100%",
-      marginTop: 30
+      marginTop: 10,
+      button: {
+        marginTop: 20
+      }
     }
   }
 })
