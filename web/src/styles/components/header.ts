@@ -1,34 +1,49 @@
 import { styled } from "../../../stitches.config"
 
 export const Container = styled("header", {
-  backgroundColor: "$primary",
-  padding: 24,
-  textTransform: "uppercase",
+  position: "fixed",
+  top: 25,
+  left: "50%",
+  transform: "translateX(-50%)",
+  width: 1120,
+  height: 84,
+  borderRadius: 20,
+  paddingInline: 18,
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  position: "fixed",
-  left: 0,
-  right: 0,
-  top: 0,
-  zIndex: 10
-})
+  backgroundColor: "$white",
+  boxShadow: "$black",
+  zIndex: 10,
 
-export const Title = styled("span", {
-  color: "$secondary",
-  fontSize: 28,
-  cursor: "pointer",
-  strong: {
-    background: "$blueLinear",
-    "-webkit-background-clip": "text",
-    "-webkit-text-fill-color": "transparent"
+  "> span": {
+    marginLeft: "24px !important"
+  },
+
+  nav: {
+    display: "flex",
+    alignItems: "center",
+    a: {
+      paddingTop: 10,
+      "&:last-child": {
+        paddingTop: 0,
+        marginRight: 40,
+        height: 48,
+        button: {
+          paddingTop: 0,
+          paddingInline: 20,
+          height: 48,
+          borderRadius: 15
+        }
+      }
+    }
   }
 })
 
 export const Tab = styled("a", {
   position: "relative",
-  color: "$white",
-  marginRight: 20,
+  color: "$black",
+  marginRight: 45,
   paddingBottom: 5,
 
   "&::before": {

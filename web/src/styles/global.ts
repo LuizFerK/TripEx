@@ -8,9 +8,12 @@ export default globalCss({
   },
   body: {
     backgroundColor: "$background",
-    fontFamily: "$arial",
+    fontFamily: "$dongle",
+    fontWeight: "$2",
+    fontSize: "$2",
     color: "$black",
-    marginTop: 85
+    marginTop: 85,
+    caretColor: "transparent"
   },
   a: {
     cursor: "pointer",

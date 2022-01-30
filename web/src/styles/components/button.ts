@@ -3,12 +3,14 @@ import { styled } from "../../../stitches.config"
 export const Container = styled("button", {
   all: "unset",
   alignItems: "center",
-  borderRadius: 4,
-  fontSize: 15,
-  height: 35,
+  borderRadius: 20,
+  fontSize: "$2",
+  height: 77,
+  paddingTop: 4,
   color: "$white",
   cursor: "pointer",
   transition: "0.2s",
+  "&:hover": { transform: "scale(1.04)" },
 
   variants: {
     type: {
@@ -35,9 +37,10 @@ export const Container = styled("button", {
       blue: {
         width: "100%",
         textAlign: "center",
-        backgroundColor: "$secondary",
+        background: "$blueLinear",
+        boxShadow: "$blue",
         "&:hover": {
-          backgroundColor: "$secondaryDark"
+          background: "$blueLinear"
         }
       }
     }

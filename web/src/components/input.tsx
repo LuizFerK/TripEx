@@ -12,17 +12,29 @@ interface InputProps {
   name: string
   icon?: "search"
   type?: "text" | "email" | "password"
+  placeholder?: string
   label?: boolean
 }
 
-export default function Input({ name, icon, type, label = true }: InputProps) {
+export default function Input({
+  name,
+  icon,
+  type,
+  placeholder,
+  label = true
+}: InputProps) {
   return (
     <Container>
       <IconContainer>
         {icon === "search" && <MagnifyingGlassIcon />}
       </IconContainer>
-      {label && <Label htmlFor="name">{upperCaseFirstLetter(name)}</Label>}
-      <TextInput id="name" type={type || "text"} variant={icon && "withIcon"} />
+      {label && <Label htmlFor={name}>{upperCaseFirstLetter(name)}</Label>}
+      <TextInput
+        placeholder={placeholder}
+        id={name}
+        type={type || "text"}
+        variant={icon && "withIcon"}
+      />
     </Container>
   )
 }

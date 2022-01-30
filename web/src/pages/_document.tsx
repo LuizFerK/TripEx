@@ -10,6 +10,10 @@ export default class Document extends NextDocument {
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

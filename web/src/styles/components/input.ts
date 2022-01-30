@@ -25,7 +25,7 @@ export const IconContainer = styled("div", {
 })
 
 export const Label = styled("label", {
-  fontSize: 13,
+  fontSize: "$2",
   lineHeight: 1,
   marginBottom: 10,
   color: "$black",
@@ -37,14 +37,14 @@ export const TextInput = styled("input", {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: 4,
-  paddingInline: 10,
-  height: 35,
-  fontSize: 15,
-  lineHeight: 1,
+  borderRadius: 20,
+  paddingInline: 28,
+  paddingTop: 4,
+  height: 76,
+  fontSize: "$2",
   color: "$black",
-  outline: "1px solid $secondary",
-  "&:focus": { outline: "2px solid $secondary" },
+  backgroundColor: "$white",
+  "&:focus": { outline: "2px solid $primary" },
 
   variants: {
     variant: {

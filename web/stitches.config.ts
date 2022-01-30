@@ -4,26 +4,23 @@ export const { styled, getCssText, globalCss } = createStitches({
   theme: {
     colors: {
       background: "#EDEDED",
-      white: "#f4f4f4",
-      black: "#060606",
-      gray: "#c4c4c4",
-      grayLight: "#c4c4c440",
-      primary: "#343A40",
-      secondary: "#17A2B8",
-      secondaryDark: "#118091",
-      blueLinear: "linear-gradient(45deg, #17A2B8, #09B175)"
+      white: "#F5F5F5",
+      black: "#1C1B20",
+      gray: "#A2A0A6",
+      primary: "#5381F9",
+      blueLinear:
+        "linear-gradient(93deg, #0052D4 -54%, #4364F7 23%, #6FB1FC 100%)"
     },
     fonts: {
-      sans: "Inter, sans-serif",
-      arial: "Arial"
+      dongle: "Dongle",
+      sans: "Inter, sans-serif"
     },
     fontSizes: {
-      1: "12px",
-      2: "14px",
-      3: "16px",
-      4: "20px",
-      5: "24px",
-      6: "32px"
+      1: "30px",
+      2: "36px",
+      3: "48px",
+      4: "56px",
+      5: "144px"
     },
     space: {
       1: "4px",
@@ -47,12 +44,19 @@ export const { styled, getCssText, globalCss } = createStitches({
       3: "8px",
       round: "9999px"
     },
-    fontWeights: {},
+    fontWeights: {
+      1: 300,
+      2: 400,
+      3: 700
+    },
     lineHeights: {},
     letterSpacings: {},
     borderWidths: {},
     borderStyles: {},
-    shadows: {},
+    shadows: {
+      blue: "0px 4px 50px rgba(83, 128, 249, 0.5)",
+      black: "0px 4px 50px rgba(0, 0, 0, 0.05)"
+    },
     zIndices: {},
     transitions: {}
   },

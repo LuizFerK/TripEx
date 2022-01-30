@@ -8,5 +8,5 @@ interface ButtonProps {
 }
 
 export default function Button({ type, children }: ButtonProps) {
-  return <Container type={type || "white"}>{children}</Container>
+  return <Container type={type || "blue"}>{children}</Container>
 }
