@@ -12,7 +12,7 @@ export default globalCss({
     fontWeight: "$2",
     fontSize: "$2",
     color: "$black",
-    marginTop: 85,
+    marginTop: 120,
     caretColor: "transparent"
   },
   a: {

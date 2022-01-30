@@ -4,8 +4,8 @@ export const Container = styled("div", {
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  height: "calc(100vh - 150px)",
-  paddingLeft: 180,
+  height: "calc(100vh - 120px)",
+  paddingLeft: "8%",
 
   "> span": {
     position: "absolute !important",
@@ -32,6 +32,24 @@ export const Container = styled("div", {
     lineHeight: 0.8,
     width: 440,
     marginTop: 30
+  },
+
+  "@media(max-width: 1750px)": {
+    paddingLeft: "4%",
+    h2: {
+      width: "45%"
+    }
+  },
+  "@media(max-width: 1360px)": {
+    "> span": {
+      display: "none !important"
+    },
+    h2: {
+      display: "none"
+    },
+    "> p": {
+      display: "none"
+    }
   }
 })
 
@@ -66,9 +84,17 @@ export const Content = styled("aside", {
     form: {
       width: "100%",
       marginTop: 10,
+      paddingInline: 40,
+      "@media(max-width: 460px)": {
+        paddingInline: 20
+      },
       button: {
         marginTop: 20
       }
     }
+  },
+  "@media(max-width: 1360px)": {
+    width: "100%",
+    top: 85
   }
 })

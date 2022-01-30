@@ -5,7 +5,7 @@ export const Container = styled("header", {
   top: 25,
   left: "50%",
   transform: "translateX(-50%)",
-  width: 1120,
+  width: "96%",
   height: 84,
   borderRadius: 20,
   paddingInline: 18,
@@ -16,12 +16,15 @@ export const Container = styled("header", {
   boxShadow: "$black",
   zIndex: 10,
 
-  "> span": {
-    marginLeft: "24px !important"
+  "> a": {
+    height: 48
+  },
+  "> button": {
+    display: "inline-flex"
   },
 
   nav: {
-    display: "flex",
+    display: "none",
     alignItems: "center",
     a: {
       paddingTop: 10,
@@ -36,6 +39,22 @@ export const Container = styled("header", {
           borderRadius: 15
         }
       }
+    }
+  },
+
+  "@bp4": {
+    width: 1120,
+    "> a": {
+      marginLeft: "24px !important"
+    }
+  },
+
+  "@bp1": {
+    nav: {
+      display: "flex"
+    },
+    "> button": {
+      display: "none"
     }
   }
 })

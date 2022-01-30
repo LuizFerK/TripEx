@@ -34,15 +34,16 @@ export const Label = styled("label", {
 
 export const TextInput = styled("input", {
   all: "unset",
+  boxSizing: "border-box",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
   borderRadius: 20,
-  paddingInline: 28,
-  paddingTop: 4,
+  padding: "4px 28px 0",
   height: 76,
   fontSize: "$2",
   color: "$black",
+  width: "100%",
   backgroundColor: "$white",
   "&:focus": { outline: "2px solid $primary" },
 
