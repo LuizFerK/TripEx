@@ -1,12 +1,19 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { getPlaceBySlug, getPlacesSlugs } from "../../clients/apollo"
-import { PersonIcon, Cross2Icon, CheckIcon } from "@radix-ui/react-icons"
+import {
+  PersonIcon,
+  Cross2Icon,
+  CheckIcon,
+  ChevronLeftIcon
+} from "@radix-ui/react-icons"
 import DayPicker from "../../components/dayPicker"
 import Page404 from "../404"
 
 import { Place as PlaceType } from ".."
 import Button from "../../components/button"
+
+import { Container, Badge, Details, Picker } from "../../styles/pages/place"
 
 interface QueryProps {
   params: {
@@ -25,23 +32,27 @@ export default function Place({ place, error }: PlaceProps) {
   return error ? (
     <Page404 />
   ) : (
-    <div>
-      <button onClick={back}>return</button>
+    <Container>
+      <button onClick={back}>
+        <ChevronLeftIcon />
+      </button>
       <h1>{place.name}</h1>
-      <h2>{place.location}</h2>
-      <section>
+      <Badge>{place.location}</Badge>
+      <Details>
         <Image
-          loader={() => place.image}
+          unoptimized
           width={500}
           height={500}
           src={place.image}
           alt={place.name}
         />
         <aside>
-          <p>{place.description}</p>
           <div>
-            <PersonIcon />
-            <span>Sleeps {place.maxGuests}</span>
+            <p>{place.description}</p>
+            <div>
+              <PersonIcon />
+              <p>Sleeps {place.maxGuests}</p>
+            </div>
           </div>
           <div>
             {[
@@ -50,19 +61,21 @@ export default function Place({ place, error }: PlaceProps) {
               { name: "Pet-Friendly", bool: place.petFriendly }
             ].map(({ name, bool }) => (
               <div key={name}>
-                {bool ? <Cross2Icon /> : <CheckIcon />}
+                {bool ? <CheckIcon /> : <Cross2Icon />}
                 <span>{name}</span>
               </div>
             ))}
           </div>
-          <strong>${place.pricePerNight}/night</strong>
+          <strong>
+            ${new Intl.NumberFormat().format(Number(place.pricePerNight))}/night
+          </strong>
         </aside>
-      </section>
-      <section>
-        <DayPicker />
+      </Details>
+      <Picker>
+        <DayPicker quantity={3} />
         <Button>Sign in to book dates!</Button>
-      </section>
-    </div>
+      </Picker>
+    </Container>
   )
 }
 

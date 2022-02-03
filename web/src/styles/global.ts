@@ -25,5 +25,8 @@ export default globalCss({
   },
   "input:-webkit-autofill": {
     "-webkit-background-clip": "text"
+  },
+  "abbr[title]": {
+    textDecoration: "none"
   }
 })

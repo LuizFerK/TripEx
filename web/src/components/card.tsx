@@ -14,12 +14,7 @@ interface CardProps {
 export default function Card({ place }: CardProps) {
   return (
     <Container>
-      <Image
-        loader={() => place.image}
-        layout="fill"
-        src={place.image}
-        alt={place.name}
-      />
+      <Image unoptimized layout="fill" src={place.image} alt={place.name} />
       <Content>
         <div>
           <h1>{place.name}</h1>

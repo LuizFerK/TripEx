@@ -1,30 +1,14 @@
 import { useState } from "react"
-import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
-import Picker, { DateUtils, LocaleUtils, RangeModifier } from "react-day-picker"
+import Picker, { DateUtils, RangeModifier } from "react-day-picker"
 import "react-day-picker/lib/style.css"
 
-import { Container, NavBarContainer } from "../styles/components/dayPicker"
+import { Container } from "../styles/components/dayPicker"
 
-interface NavBarProps {
-  onPreviousClick: () => void
-  onNextClick: () => void
-  className: string
+interface DayPickerProps {
+  quantity?: number
 }
 
-function NavBar({ onPreviousClick, onNextClick, className }: NavBarProps) {
-  return (
-    <NavBarContainer className={className}>
-      <button onClick={() => onPreviousClick()}>
-        <ChevronLeftIcon />
-      </button>
-      <button onClick={() => onNextClick()}>
-        <ChevronRightIcon />
-      </button>
-    </NavBarContainer>
-  )
-}
-
-export default function DayPicker() {
+export default function DayPicker({ quantity = 1 }: DayPickerProps) {
   const [range, setRange] = useState<RangeModifier>({} as RangeModifier)
 
   const handleDayClick = (day: Date) => {
@@ -33,8 +17,9 @@ export default function DayPicker() {
   }
 
   return (
-    <Container>
+    <Container quantity={quantity > 1 ? "multiple" : "unique"}>
       <Picker
+        numberOfMonths={quantity}
         className="Selectable"
         selectedDays={[
           range.from as Date | undefined,

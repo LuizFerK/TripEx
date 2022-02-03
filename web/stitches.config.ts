@@ -56,7 +56,8 @@ export const { styled, getCssText, globalCss } = createStitches({
     borderStyles: {},
     shadows: {
       blue: "0px 4px 50px rgba(83, 128, 249, 0.5)",
-      black: "0px 4px 50px rgba(0, 0, 0, 0.05)"
+      black: "0px 4px 50px rgba(0, 0, 0, 0.05)",
+      boldBlack: "0px 4px 50px rgba(0, 0, 0, 0.25)"
     },
     zIndices: {},
     transitions: {}

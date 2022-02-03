@@ -22,7 +22,9 @@ export const Container = styled("div", {
     display: "grid"
   },
   ".DayPicker-Caption": {
-    fontSize: "30px",
+    div: {
+      fontSize: "30px !important"
+    },
     padding: "0 10px 0",
     marginBottom: -10
   },
@@ -122,9 +124,30 @@ export const Container = styled("div", {
     background: "$blue !important",
     outline: "none"
   },
+  ".Selectable .DayPicker-Day--outside": {
+    background: "$white !important"
+  },
   ".DayPicker-Day--today": {
     color: "$blue"
+  },
+  variants: {
+    quantity: {
+      multiple: {
+        ".DayPicker-NavBar": {
+          top: 27,
+          right: 34
+        },
+        ".DayPicker-Months": {
+          background: "$white",
+          padding: "20px 10px",
+          borderRadius: 20
+        },
+        ".DayPicker-Month": {
+          width: "fit-content",
+          marginInline: 40
+        }
+      },
+      unique: {}
+    }
   }
 })
-
-export const NavBarContainer = styled("button", {})
