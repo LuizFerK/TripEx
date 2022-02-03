@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import { getPlaceBySlug, getPlacesSlugs } from "../../clients/apollo"
 import {
@@ -7,13 +8,22 @@ import {
   CheckIcon,
   ChevronLeftIcon
 } from "@radix-ui/react-icons"
-import DayPicker from "../../components/dayPicker"
+
 import Page404 from "../404"
+import DayPicker from "../../components/dayPicker"
+
+import timeFromNow from "../../utils/timeFromNow"
 
 import { Place as PlaceType } from ".."
 import Button from "../../components/button"
 
-import { Container, Badge, Details, Picker } from "../../styles/pages/place"
+import {
+  Container,
+  Badge,
+  Details,
+  Picker,
+  Reviews
+} from "../../styles/pages/place"
 
 interface QueryProps {
   params: {
@@ -73,8 +83,38 @@ export default function Place({ place, error }: PlaceProps) {
       </Details>
       <Picker>
         <DayPicker quantity={3} />
-        <Button>Sign in to book dates!</Button>
+        <Link href="/signin">
+          <a>
+            <Button>Sign in to book dates!</Button>
+          </a>
+        </Link>
       </Picker>
+      <Reviews>
+        <h2>Reviews</h2>
+        {place.reviews.length === 0 ? (
+          <div>
+            <div>
+              <strong>Unfortunately, this place has no reviews. :(</strong>
+            </div>
+            <p>Go ahead and be the first one to review it!</p>
+          </div>
+        ) : (
+          place.reviews.map(review => (
+            <div key={review.id}>
+              <div>
+                <strong>{review.user.username}</strong>
+                <span>{timeFromNow(review.insertedAt)}</span>
+              </div>
+              <p>{review.comment}</p>
+            </div>
+          ))
+        )}
+        <Link href="/signin">
+          <a>
+            <Button>Sign in to post a review!</Button>
+          </a>
+        </Link>
+      </Reviews>
     </Container>
   )
 }

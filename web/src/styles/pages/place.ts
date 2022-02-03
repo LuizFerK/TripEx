@@ -124,6 +124,50 @@ export const Picker = styled("section", {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  a: {
+    width: "100%",
+    button: {
+      marginTop: 10,
+      height: 57
+    }
+  }
+})
+
+export const Reviews = styled("section", {
+  width: "100%",
+  marginBlock: 40,
+  h2: {
+    fontSize: "$4"
+  },
+  "> div": {
+    borderRadius: 20,
+    padding: "15px 20px",
+    backgroundColor: "$white",
+    position: "relative",
+    marginBottom: 15,
+    div: {
+      marginBottom: -15,
+      span: {
+        marginLeft: 10,
+        fontSize: "$1",
+        color: "$gray"
+      }
+    },
+    p: {
+      fontSize: "$1"
+    },
+
+    "&::before": {
+      content: "",
+      position: "absolute",
+      left: 0,
+      top: 20,
+      bottom: 20,
+      borderRadius: "$round",
+      width: 3,
+      background: "$blueLinear"
+    }
+  },
   button: {
     marginTop: 10,
     height: 57

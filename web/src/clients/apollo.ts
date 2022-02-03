@@ -64,6 +64,15 @@ export async function getPlaceBySlug(slug: string) {
           pool
           petFriendly
           pricePerNight
+          reviews {
+						id
+						user {
+							username
+						}
+						insertedAt
+						rating
+						comment
+					}
         }
       }
     `

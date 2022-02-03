@@ -3,6 +3,18 @@ import Card from "../components/card"
 
 import { Container } from "../styles/pages"
 
+interface User {
+  username: string
+}
+
+interface Review {
+  id: string
+  user: User
+  insertedAt: string
+  rating: number
+  comment: string
+}
+
 export interface Place {
   id: string
   name: string
@@ -15,6 +27,7 @@ export interface Place {
   pool: boolean
   petFriendly: boolean
   pricePerNight: string
+  reviews: Review[]
 }
 
 interface HomeProps {

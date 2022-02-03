@@ -29,7 +29,7 @@ export default function Card({ place }: CardProps) {
             </Sleeps>
             <Link passHref href={`/place/${place.slug}`}>
               <a>
-                <Button type="blue">Book now</Button>
+                <Button>Book now</Button>
               </a>
             </Link>
           </footer>
