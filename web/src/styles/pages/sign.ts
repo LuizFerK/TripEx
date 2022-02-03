@@ -8,11 +8,12 @@ export const Container = styled("div", {
   paddingLeft: "8%",
 
   "> span": {
+    backgroundColor: "red",
     position: "absolute !important",
     top: 0,
     bottom: 0,
     left: 0,
-    rigth: "50%",
+    right: "38vw",
     img: {
       objectFit: "cover"
     }
@@ -60,11 +61,11 @@ export const Content = styled("aside", {
   top: 0,
   bottom: 0,
   right: 0,
-  width: 832,
   borderTopLeftRadius: 40,
   borderBottomLeftRadius: 40,
   display: "grid",
   placeItems: "center",
+  width: "40vw",
   div: {
     display: "flex",
     flexDirection: "column",
@@ -78,11 +79,11 @@ export const Content = styled("aside", {
       marginTop: 25,
 
       a: {
-        color: "$primary"
+        color: "$blue"
       }
     },
     form: {
-      width: "100%",
+      width: 500,
       marginTop: 10,
       paddingInline: 40,
       "@media(max-width: 460px)": {

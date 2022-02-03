@@ -6,12 +6,12 @@ export const Container = styled("fieldset", {
   width: "100%",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "flex-start"
+  justifyContent: "center"
 })
 
 export const IconContainer = styled("div", {
   position: "absolute",
-  width: 35,
+  width: 50,
   height: 35,
   display: "grid",
   placeItems: "center",
@@ -38,19 +38,21 @@ export const TextInput = styled("input", {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: 20,
+  borderRadius: 15,
   padding: "4px 28px 0",
-  height: 76,
+  height: 56,
   fontSize: "$2",
   color: "$black",
   width: "100%",
   backgroundColor: "$white",
-  "&:focus": { outline: "2px solid $primary" },
+  "&:focus": { outline: "2px solid $blue" },
 
   variants: {
     variant: {
       withIcon: {
-        paddingLeft: 35
+        paddingLeft: 50,
+        paddingRight: 10,
+        backgroundColor: "$background"
       }
     }
   }

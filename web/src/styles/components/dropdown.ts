@@ -34,7 +34,7 @@ export const ButtonIcon = styled("button", {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "$primary",
+  color: "$blue",
   backgroundColor: "$background",
   boxShadow: "0 2px 10px $black",
   cursor: "pointer",
@@ -42,8 +42,8 @@ export const ButtonIcon = styled("button", {
     height: 18,
     width: 18
   },
-  "&:hover": { outline: "2px solid $primary" },
-  "&:focus": { outline: "2px solid $primary" }
+  "&:hover": { outline: "2px solid $blue" },
+  "&:focus": { outline: "2px solid $blue" }
 })
 
 export const Content = styled(DropdownContent, {
@@ -81,7 +81,7 @@ export const Content = styled(DropdownContent, {
 export const Item = styled(DropdownItem, {
   all: "unset",
   fontSize: "$1",
-  color: "$primary",
+  color: "$blue",
   borderRadius: 10,
   display: "flex",
   alignItems: "center",
@@ -97,7 +97,7 @@ export const Item = styled(DropdownItem, {
   },
 
   "&:focus": {
-    backgroundColor: "$primary",
+    backgroundColor: "$blue",
     color: "$white"
   }
 })
@@ -111,7 +111,7 @@ export const ItemIcon = styled("button", {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "$primary",
+  color: "$blue",
   backgroundColor: "$background",
   boxShadow: "0 2px 10px $black",
   marginRight: 10,
@@ -121,6 +121,6 @@ export const ItemIcon = styled("button", {
     width: 18,
     height: 18
   },
-  "&:hover": { backgroundColor: "$primary" },
+  "&:hover": { backgroundColor: "$blue" },
   "&:focus": { boxShadow: "0 0 0 2px black" }
 })

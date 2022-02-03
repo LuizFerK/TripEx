@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { CheckIcon } from "@radix-ui/react-icons"
+import { CheckedState } from "@radix-ui/react-checkbox"
 import upperCaseFirstLetter from "../utils/upperCaseFirstLetter"
 
 import { Container, Box, Indicator, Label } from "../styles/components/checkbox"
@@ -9,11 +10,16 @@ interface CheckboxProps {
 }
 
 export default function Checkbox({ name }: CheckboxProps) {
-  const [checked, setChecked] = useState("indeterminate")
+  const [checked, setChecked] = useState<CheckedState | undefined>(undefined)
 
   return (
     <Container>
-      <Box id={name}>
+      <Box
+        id={name}
+        checked={checked}
+        onCheckedChange={setChecked}
+        type={checked ? "selected" : "default"}
+      >
         <Indicator>
           <CheckIcon />
         </Indicator>

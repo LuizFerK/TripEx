@@ -22,7 +22,7 @@ export default function Card({ place }: CardProps) {
       />
       <Content>
         <div>
-          <span>{place.name}</span>
+          <h1>{place.name}</h1>
           <Badge>{place.location}</Badge>
         </div>
         <div>
@@ -34,7 +34,7 @@ export default function Card({ place }: CardProps) {
             </Sleeps>
             <Link passHref href={`/place/${place.slug}`}>
               <a>
-                <Button>Book now</Button>
+                <Button type="blue">Book now</Button>
               </a>
             </Link>
           </footer>

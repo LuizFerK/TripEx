@@ -9,6 +9,6 @@ export const Container = styled("div", {
     marginBottom: 15
   },
   a: {
-    color: "$secondary"
+    color: "$blue"
   }
 })

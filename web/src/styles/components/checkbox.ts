@@ -9,26 +9,40 @@ export const Container = styled("div", {
 
 export const Box = styled(RadixCheckbox.Root, {
   all: "unset",
-  backgroundColor: "$grayLight",
+  backgroundColor: "$background",
   width: 25,
-  height: 25,
-  borderRadius: 4,
+  height: 20,
+  paddingTop: 5,
+  borderRadius: 8,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   boxShadow: "0 2px 10px $black",
   cursor: "pointer",
-  "&:hover": { backgroundColor: "$gray" },
-  "&:focus": { boxShadow: "0 0 0 2px $black", outline: "2px solid $secondary" }
+
+  variants: {
+    type: {
+      selected: {
+        backgroundColor: "$blue",
+        svg: {
+          color: "$white"
+        }
+      },
+      default: {
+        "&:hover": { backgroundColor: "$lightBlue" },
+        "&:focus": { boxShadow: "0 0 0 2px $black", outline: "2px solid $blue" }
+      }
+    }
+  }
 })
 
 export const Indicator = styled(RadixCheckbox.Indicator, {
-  color: "$secondary"
+  color: "$black"
 })
 
 export const Label = styled("label", {
   color: "$black",
-  fontSize: 15,
+  fontSize: "$1",
   lineHeight: 1,
   userSelect: "none",
   paddingLeft: 15,

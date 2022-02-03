@@ -4,20 +4,23 @@ export const Container = styled("div", {
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  backgroundColor: "$grayLight",
+  backgroundColor: "$background",
   marginBottom: 15,
-  borderRadius: 4,
+  borderRadius: 10,
+  height: 35,
 
   div: {
     display: "inline-flex",
     alignItems: "center",
 
     span: {
-      margin: "unset"
+      fontSize: "$1",
+      margin: "unset",
+      paddingTop: 3.2
     },
 
     svg: {
-      strokeWidth: 0.25,
+      strokeWidth: 0.8,
       stroke: "$black",
       marginRight: 4
     }
@@ -25,21 +28,24 @@ export const Container = styled("div", {
 })
 
 export const Button = styled("button", {
-  backgroundColor: "$secondary",
+  backgroundColor: "$blue",
   width: 35,
   height: 35,
-  borderRadius: 4,
+  borderRadius: 10,
   border: "none",
   margin: 0,
+  transition: "0.2s",
 
   svg: {
     color: "$white",
     width: 17,
-    height: 17
+    height: 17,
+    marginTop: 3
   },
 
   "&:hover": {
-    backgroundColor: "$secondaryDark"
+    backgroundColor: "$blue",
+    transform: "scale(1.1)"
   },
 
   variants: {

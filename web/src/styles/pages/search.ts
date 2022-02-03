@@ -1,10 +1,10 @@
 import { styled } from "../../../stitches.config"
 
 export const Container = styled("div", {
-  paddingBlock: 30,
+  padding: "5px 0 30px",
   textAlign: "center",
   p: {
-    marginBottom: 20
+    marginBottom: 5
   },
 
   "> div": {
@@ -22,14 +22,15 @@ export const Container = styled("div", {
 export const Aside = styled("aside", {
   display: "flex",
   flexDirection: "column",
-  backgroundColor: "$grayLight",
+  backgroundColor: "$white",
   height: "min-content",
-  padding: 20,
-  borderRadius: 8,
+  padding: "10px 20px 20px",
+  borderRadius: 20,
+  width: 340,
 
   "> span": {
     textTransform: "uppercase",
-    marginBottom: 8,
+    marginBottom: -5,
     marginLeft: 2
   },
 

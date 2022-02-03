@@ -5,7 +5,7 @@ const cardSizeBp4 = "28vw"
 
 export const Container = styled("div", {
   width: "100%",
-  borderRadius: 8,
+  borderRadius: 12,
   overflow: "hidden",
   position: "relative",
   transition: "0.2s",
@@ -43,21 +43,38 @@ export const Content = styled("div", {
   width: "100%",
   height: cardSize,
   maxHeight: 390,
-  padding: 15,
+  padding: "19px 15px 15px",
   transition: "0.2s",
-  span: {
+  h1: {
     color: "$white",
-    fontSize: 24,
-    fontWeight: 700
+    fontSize: "$2",
+    lineHeight: 0.7
   },
-  p: {
-    color: "$white",
-    marginBottom: 10
+  "div:last-child": {
+    p: {
+      color: "$white",
+      marginBottom: 8,
+      fontWeight: 300,
+      fontSize: 24,
+      lineHeight: 0.7
+    }
   },
   footer: {
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center"
+    alignItems: "center",
+    a: {
+      height: 32,
+      display: "flex",
+
+      button: {
+        paddingTop: 2,
+        paddingInline: 10,
+        height: 32,
+        fontSize: 24,
+        borderRadius: 8
+      }
+    }
   },
 
   "@bp5": {
@@ -68,31 +85,34 @@ export const Content = styled("div", {
 export const Badge = styled("p", {
   background: "$blueLinear",
   width: "fit-content",
-  paddingInline: 15,
-  paddingBlock: 1,
-  borderRadius: 5,
-  marginTop: 4,
-  fontSize: 14,
+  height: 22,
+  fontSize: 18,
+  fontWeight: 300,
+  paddingInline: 10,
+  paddingBlock: 0,
+  borderRadius: 8,
   color: "$white"
 })
 
 export const Sleeps = styled("div", {
   backgroundColor: "$white",
   paddingInline: 10,
-  height: 37,
-  borderRadius: 4,
+  height: 32,
+  borderRadius: 8,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   strong: {
     color: "$black",
-    fontSize: 14,
+    fontSize: 24,
+    fontWeight: 400,
+    paddingTop: 4,
     marginLeft: 5
   },
   svg: {
     color: "$black",
-    width: 17,
-    height: 17,
+    width: 14,
+    height: 14,
     strokeWidth: 0.4,
     stroke: "$black"
   }

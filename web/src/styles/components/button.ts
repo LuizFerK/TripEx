@@ -3,9 +3,9 @@ import { styled } from "../../../stitches.config"
 export const Container = styled("button", {
   all: "unset",
   alignItems: "center",
-  borderRadius: 20,
+  borderRadius: 15,
   fontSize: "$2",
-  height: 77,
+  height: 56,
   paddingTop: 4,
   color: "$white",
   cursor: "pointer",
@@ -24,13 +24,14 @@ export const Container = styled("button", {
         }
       },
       black: {
-        border: "1px solid $primary",
-        color: "$primary",
-        textAlign: "center",
-        width: "fit-content",
+        backgroundColor: "$blue",
+        color: "$white",
+        fontSize: "$1",
         paddingInline: 15,
+        height: 33,
+        paddingBottom: 10,
         "&:hover": {
-          backgroundColor: "$primary",
+          backgroundColor: "$blue",
           color: "$white"
         }
       },
