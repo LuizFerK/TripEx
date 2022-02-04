@@ -43,6 +43,19 @@ export const Container = styled("button", {
         "&:hover": {
           background: "$blueLinear"
         }
+      },
+      red: {
+        width: "100%",
+        textAlign: "center",
+        fontWeight: 300,
+        color: "$gray",
+        outline: "1px solid $gray",
+
+        "&:hover": {
+          background: "$red",
+          outline: "none",
+          color: "$white"
+        }
       }
     }
   }

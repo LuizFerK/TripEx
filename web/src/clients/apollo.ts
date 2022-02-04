@@ -10,6 +10,13 @@ interface PlaceQuery {
   place: Place
 }
 
+interface AuthMutation {
+  user: {
+    username: string
+  }
+  token: string
+}
+
 export const client = new ApolloClient({
   uri: "http://127.0.0.1:4000/api",
   cache: new InMemoryCache()
@@ -79,4 +86,21 @@ export async function getPlaceBySlug(slug: string) {
   })
 
   return data.place
+}
+
+export async function authenticate(username: string, password: string) {
+  const { data } = await client.mutate<AuthMutation>({
+    mutation: gql`
+      mutation Authenticate {
+        signin(username: "${username}", password: "${password}") {
+          user {
+            username
+          }
+          token
+        }
+      }
+    `
+  })
+
+  return data
 }

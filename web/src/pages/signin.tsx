@@ -12,7 +12,7 @@ export default function SignIn() {
         width={1178}
         height={1080}
         src="/sign_bg.png"
-        alt="TripEx logo"
+        alt="Beach"
         priority
       />
       <h2>Make your dream trip come true</h2>
