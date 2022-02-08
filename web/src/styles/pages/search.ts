@@ -45,6 +45,7 @@ export const Grid = styled("div", {
   placeItems: "center",
   gap: 12,
   width: "65%",
+  height: "min-content",
   marginLeft: "3%",
   maxWidth: 1000,
   "@bp3": {

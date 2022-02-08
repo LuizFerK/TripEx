@@ -13,7 +13,7 @@ export const Container = styled("button", {
   "&:hover": { transform: "scale(1.04)" },
 
   variants: {
-    type: {
+    color: {
       white: {
         display: "inline-flex",
         padding: "0 15px",

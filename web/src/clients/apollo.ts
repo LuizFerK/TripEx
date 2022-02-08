@@ -17,16 +17,31 @@ interface AuthMutation {
   token: string
 }
 
+interface StringDateRange {
+  endDate: string
+  startDate: string
+}
+
+export interface PlacesFilters {
+  wifi?: boolean
+  pool?: boolean
+  petFriendly?: boolean
+  matching?: string
+  guestCount?: number
+  availableBetween?: StringDateRange
+}
+
 export const client = new ApolloClient({
   uri: "http://127.0.0.1:4000/api",
   cache: new InMemoryCache()
 })
 
-export async function getPlaces() {
+export async function getPlaces(filters: PlacesFilters = {}) {
+  const parsedFilters = JSON.stringify(filters).replace(/"([^"]+)":/g, "$1:")
   const { data } = await client.query<PlacesQuery>({
     query: gql`
       query Places {
-        places {
+        places(filter: ${parsedFilters}) {
           id
           name
           location

@@ -1,4 +1,3 @@
-import { useState } from "react"
 import Picker, { DateUtils, RangeModifier } from "react-day-picker"
 import "react-day-picker/lib/style.css"
 
@@ -6,14 +5,21 @@ import { Container } from "../styles/components/dayPicker"
 
 interface DayPickerProps {
   quantity?: number
+  value: RangeModifier | undefined
+  onChange: (range: RangeModifier) => void
 }
 
-export default function DayPicker({ quantity = 1 }: DayPickerProps) {
-  const [range, setRange] = useState<RangeModifier>({} as RangeModifier)
-
+export default function DayPicker({
+  quantity = 1,
+  value,
+  onChange
+}: DayPickerProps) {
   const handleDayClick = (day: Date) => {
-    const newRange = DateUtils.addDayToRange(day, range)
-    setRange(newRange)
+    const newRange = DateUtils.addDayToRange(day, {
+      from: value?.from || undefined,
+      to: value?.to || undefined
+    })
+    onChange(newRange)
   }
 
   return (
@@ -21,13 +27,10 @@ export default function DayPicker({ quantity = 1 }: DayPickerProps) {
       <Picker
         numberOfMonths={quantity}
         className="Selectable"
-        selectedDays={[
-          range.from as Date | undefined,
-          { from: range.from, to: range.to }
-        ]}
+        selectedDays={[value?.from || undefined, value]}
         modifiers={{
-          start: range.from as Date | undefined,
-          end: range.to as Date | undefined
+          start: value?.from || undefined,
+          end: value?.to || undefined
         }}
         onDayClick={handleDayClick}
       />

@@ -1,12 +1,16 @@
-import { ReactNode } from "react"
+import React, { ButtonHTMLAttributes, ReactNode } from "react"
 
 import { Container } from "../styles/components/button"
 
-interface ButtonProps {
-  type?: "white" | "black" | "blue" | "red"
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  color?: "white" | "black" | "blue" | "red"
   children: ReactNode
 }
 
-export default function Button({ type, children }: ButtonProps) {
-  return <Container type={type || "blue"}>{children}</Container>
+export default function Button({ color, children, ...rest }: ButtonProps) {
+  return (
+    <Container color={color || "blue"} {...rest}>
+      {children}
+    </Container>
+  )
 }

@@ -1,24 +1,22 @@
-import { useState } from "react"
 import { CheckIcon } from "@radix-ui/react-icons"
-import { CheckedState } from "@radix-ui/react-checkbox"
 import upperCaseFirstLetter from "../utils/upperCaseFirstLetter"
 
 import { Container, Box, Indicator, Label } from "../styles/components/checkbox"
 
 interface CheckboxProps {
   name: string
+  value: boolean | undefined
+  onChange: (state: boolean) => void
 }
 
-export default function Checkbox({ name }: CheckboxProps) {
-  const [checked, setChecked] = useState<CheckedState | undefined>(undefined)
-
+export default function Checkbox({ name, value, onChange }: CheckboxProps) {
   return (
     <Container>
       <Box
         id={name}
-        checked={checked}
-        onCheckedChange={setChecked}
-        type={checked ? "selected" : "default"}
+        checked={value}
+        onCheckedChange={state => onChange(state as boolean)}
+        type={value ? "selected" : "default"}
       >
         <Indicator>
           <CheckIcon />

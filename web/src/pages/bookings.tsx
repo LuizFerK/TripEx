@@ -77,7 +77,7 @@ export default function Bookings({ bookings }: BookingsProps) {
                 </a>
               </Link>
               {booking.state === "reserved" && (
-                <Button type="red">
+                <Button color="red">
                   <Cross2Icon />
                   <span>Cancel</span>
                 </Button>

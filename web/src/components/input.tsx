@@ -1,3 +1,4 @@
+import { InputHTMLAttributes } from "react"
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons"
 import upperCaseFirstLetter from "../utils/upperCaseFirstLetter"
 
@@ -8,7 +9,7 @@ import {
   TextInput
 } from "../styles/components/input"
 
-interface InputProps {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string
   icon?: "search"
   type?: "text" | "email" | "password"
@@ -21,7 +22,8 @@ export default function Input({
   icon,
   type,
   placeholder,
-  label = true
+  label = true,
+  ...rest
 }: InputProps) {
   return (
     <Container>
@@ -34,6 +36,7 @@ export default function Input({
         id={name}
         type={type || "text"}
         variant={icon && "withIcon"}
+        {...rest}
       />
     </Container>
   )

@@ -3,34 +3,29 @@ import { MinusIcon, PlusIcon, PersonIcon } from "@radix-ui/react-icons"
 
 import { Container, Button } from "../styles/components/counter"
 
-export default function Counter() {
-  const [counter, setCounter] = useState(2)
+interface CounterProps {
+  value: number | undefined
+  onChange: (guests: number) => void
+}
 
-  const handleCounterDown = () => {
-    counter > 1 && setCounter(counter - 1)
-  }
-
-  const handleCounterUp = () => {
-    counter < 10 && setCounter(counter + 1)
-  }
-
+export default function Counter({ value, onChange }: CounterProps) {
   return (
     <Container>
       <Button
-        disabled={counter <= 1}
-        cursor={counter <= 1 ? "disabled" : "enable"}
-        onClick={handleCounterDown}
+        disabled={(value || 2) <= 1}
+        cursor={(value || 2) <= 1 ? "disabled" : "enable"}
+        onClick={() => onChange((value || 2) - 1)}
       >
         <MinusIcon />
       </Button>
       <div>
         <PersonIcon />
-        <span>{counter}</span>
+        {value && <span>{value}</span>}
       </div>
       <Button
-        disabled={counter >= 10}
-        cursor={counter >= 10 ? "disabled" : "enable"}
-        onClick={handleCounterUp}
+        disabled={(value || 2) >= 10}
+        cursor={(value || 2) >= 10 ? "disabled" : "enable"}
+        onClick={() => onChange((value || 2) + 1)}
       >
         <PlusIcon />
       </Button>
