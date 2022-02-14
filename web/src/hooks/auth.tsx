@@ -3,31 +3,24 @@ import {
   createContext,
   useCallback,
   useState,
-  useContext
+  useContext,
+  useEffect
 } from "react"
-import { authenticate } from "../clients/apollo"
+import Router from "next/router"
 
 interface User {
-  id: string
-  email: string
-  avatar_url: string
-  name: string
+  username: string
 }
 
 interface AuthState {
-  token: string
-  user: User
-}
-
-interface SignInCredentials {
-  email: string
-  password: string
+  token?: string
+  user?: User
 }
 
 interface AuthContextData {
-  user: User
-  signIn(credentials: SignInCredentials): Promise<void>
-  signOut(): void
+  user: User | undefined
+  signIn(data: AuthState): void
+  signOut: () => void
 }
 
 interface AuthProviderProps {
@@ -37,33 +30,26 @@ interface AuthProviderProps {
 const AuthContext = createContext<AuthContextData>({} as AuthContextData)
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [data, setData] = useState<AuthState>(() => {
+  const [data, setData] = useState({} as AuthState)
+
+  useEffect(() => {
     const token = localStorage.getItem("@TripEx:token")
     const user = localStorage.getItem("@TripEx:user")
 
     if (token && user) {
-      api.defaults.headers.authorization = `Bearer ${token}`
-
-      return { token, user: JSON.parse(user) }
+      return setData({ token, user: JSON.parse(user) })
     }
 
-    return {} as AuthState
-  })
+    return setData({} as AuthState)
+  }, [])
 
-  const signIn = useCallback(async ({ email, password }) => {
-    const response = await api.post("sessions", {
-      email,
-      password
-    })
-
-    const { token, user } = response.data
-
-    localStorage.setItem("@TripEx:token", token)
+  const signIn = useCallback(({ user, token }: AuthState) => {
+    localStorage.setItem("@TripEx:token", String(token))
     localStorage.setItem("@TripEx:user", JSON.stringify(user))
 
-    api.defaults.headers.authorization = `Bearer ${token}`
-
     setData({ token, user })
+
+    Router.push("/")
   }, [])
 
   const signOut = useCallback(() => {

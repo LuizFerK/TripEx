@@ -49,14 +49,21 @@ export const Container = styled("button", {
         textAlign: "center",
         fontWeight: 300,
         color: "$gray",
-        outline: "1px solid $gray",
+        background: "$white",
+        boxShadow: "$boldBlack",
 
         "&:hover": {
           background: "$red",
-          outline: "none",
           color: "$white"
         }
       }
+    },
+    option: {
+      disabled: {
+        cursor: "not-allowed",
+        "&:hover": { transform: "scale(1)" }
+      },
+      default: {}
     }
   }
 })

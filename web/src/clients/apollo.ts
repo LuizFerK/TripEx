@@ -2,6 +2,15 @@ import { ApolloClient, InMemoryCache, gql } from "@apollo/client"
 
 import { Place } from "../pages"
 
+export interface Error {
+  message: string
+  details: {
+    username?: string[]
+    email?: string[]
+    password?: string[]
+  }
+}
+
 interface PlacesQuery {
   places: Place[]
 }
@@ -11,10 +20,15 @@ interface PlaceQuery {
 }
 
 interface AuthMutation {
-  user: {
-    username: string
+  data: {
+    signup: {
+      user: {
+        username: string
+      }
+      token: string
+    }
   }
-  token: string
+  errors?: Error[]
 }
 
 interface StringDateRange {
@@ -118,4 +132,26 @@ export async function authenticate(username: string, password: string) {
   })
 
   return data
+}
+
+export async function signUp(
+  username: string,
+  email: string,
+  password: string
+) {
+  const data = await client.mutate({
+    mutation: gql`
+        mutation SignUp {
+          signup(username: "${username}", email: "${email}", password: "${password}") {
+            user {
+              username
+            }
+            token
+          }
+        }
+      `,
+    errorPolicy: "all"
+  })
+
+  return data as AuthMutation
 }

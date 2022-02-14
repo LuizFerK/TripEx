@@ -115,14 +115,20 @@ export const Container = styled("div", {
         },
         "a + button": {
           marginLeft: 6,
-          width: 110,
+          width: "max-content",
           fontSize: "$1",
-          paddingRight: 4,
+          paddingInline: 10,
           svg: {
             width: 20,
             height: 20,
-            marginBottom: -4,
-            marginRight: 4
+            marginBottom: -4
+          },
+          transition: "0.2s",
+          "&:hover": {
+            "&::after": {
+              content: "Cancel",
+              marginLeft: 4
+            }
           }
         }
       }

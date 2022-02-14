@@ -99,3 +99,46 @@ export const Content = styled("aside", {
     top: 85
   }
 })
+
+export const Error = styled("div", {
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  padding: "0px 40px 10px",
+  div: {
+    width: "100%",
+    strong: {
+      fontSize: 34,
+      marginRight: "auto",
+      color: "$red"
+    },
+    div: {
+      width: "100%",
+      display: "flex",
+      alignItems: "flex-start",
+      backgroundColor: "#db5a8915",
+      padding: "5px 20px 1px",
+      borderRadius: 20,
+      position: "relative",
+      marginBlock: 4,
+      b: {
+        fontSize: 30,
+        marginBottom: -18
+      },
+      span: {
+        fontSize: "$1"
+      },
+      "&::before": {
+        content: "",
+        position: "absolute",
+        left: 0,
+        top: 18,
+        bottom: 18,
+        borderRadius: "$round",
+        width: 3,
+        background: "$red",
+        zIndex: 2
+      }
+    }
+  }
+})

@@ -30,7 +30,6 @@ export default function Search({ places: PlacesQuery }: SearchProps) {
     debounceInput(e.currentTarget.value)
 
   const debounceInput = debounce(value => {
-    console.log(value)
     setFilters({ ...filters, matching: value })
   }, 500)
 

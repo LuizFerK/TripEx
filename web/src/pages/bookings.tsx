@@ -79,7 +79,6 @@ export default function Bookings({ bookings }: BookingsProps) {
               {booking.state === "reserved" && (
                 <Button color="red">
                   <Cross2Icon />
-                  <span>Cancel</span>
                 </Button>
               )}
             </div>

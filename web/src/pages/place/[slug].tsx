@@ -82,7 +82,7 @@ export default function Place({ place, error }: PlaceProps) {
         </aside>
       </Details>
       <Picker>
-        <DayPicker quantity={3} />
+        {/* <DayPicker quantity={3} /> */}
         <Link href="/signin">
           <a>
             <Button>Sign in to book dates!</Button>
