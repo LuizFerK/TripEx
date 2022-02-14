@@ -1,14 +1,17 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Error as ErrorType } from "../clients/apollo"
+import { signIn as signInRequest, Error as ErrorType } from "../clients/apollo"
+import { useAuth } from "../hooks/auth"
 
 import Button from "../components/button"
 import Input from "../components/input"
 
-import { Container, Content } from "../styles/pages/sign"
+import { Container, Content, Error } from "../styles/pages/sign"
 
 export default function SignIn() {
+  const { signIn } = useAuth()
+
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -22,24 +25,22 @@ export default function SignIn() {
     e.preventDefault()
     setErrors([])
 
-    console.log(username, password)
+    const { data, errors: signUpErrors } = await signInRequest(
+      username,
+      password
+    ).catch(() => ({
+      data: null,
+      errors: [{ message: "Unexpected error, try again later...", details: {} }]
+    }))
 
-    // const { data, errors: signUpErrors } = await signIn(
-    //   username,
-    //   password
-    // ).catch(() => ({
-    //   data: null,
-    //   errors: [{ message: "Wrong username or passoword", details: {} }]
-    // }))
+    signUpErrors && setErrors(signUpErrors)
 
-    // signUpErrors && setErrors(signUpErrors)
-
-    // if (data?.signup.token) {
-    //   signIn({
-    //     user: data.signup.user,
-    //     token: data.signup.token
-    //   })
-    // }
+    if (!signUpErrors && data?.signin) {
+      signIn({
+        user: data.signin.user,
+        token: data.signin.token
+      })
+    }
   }
 
   return (
@@ -56,6 +57,15 @@ export default function SignIn() {
       <Content>
         <div>
           <h1>Sign In</h1>
+          {errors.length > 0 && (
+            <Error>
+              {errors.map(error => (
+                <div key={error.message}>
+                  <strong>{error.message}</strong>
+                </div>
+              ))}
+            </Error>
+          )}
           <form onSubmit={handleSubmitForm}>
             <Input
               name="username"

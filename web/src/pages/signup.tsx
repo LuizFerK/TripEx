@@ -31,12 +31,12 @@ export default function SignUp() {
       password
     ).catch(() => ({
       data: null,
-      errors: [{ message: "Email already taken", details: {} }]
+      errors: [{ message: "Unexpected error, try again later...", details: {} }]
     }))
 
     signUpErrors && setErrors(signUpErrors)
 
-    if (data?.signup.token) {
+    if (!signUpErrors && data?.signup) {
       signIn({
         user: data.signup.user,
         token: data.signup.token

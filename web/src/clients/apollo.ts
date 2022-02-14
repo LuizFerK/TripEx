@@ -19,7 +19,19 @@ interface PlaceQuery {
   place: Place
 }
 
-interface AuthMutation {
+interface SignInMutation {
+  data: {
+    signin: {
+      user: {
+        username: string
+      }
+      token: string
+    }
+  }
+  errors?: Error[]
+}
+
+interface SignUpMutation {
   data: {
     signup: {
       user: {
@@ -117,10 +129,10 @@ export async function getPlaceBySlug(slug: string) {
   return data.place
 }
 
-export async function authenticate(username: string, password: string) {
-  const { data } = await client.mutate<AuthMutation>({
+export async function signIn(username: string, password: string) {
+  const data = await client.mutate({
     mutation: gql`
-      mutation Authenticate {
+      mutation signIn {
         signin(username: "${username}", password: "${password}") {
           user {
             username
@@ -128,10 +140,11 @@ export async function authenticate(username: string, password: string) {
           token
         }
       }
-    `
+    `,
+    errorPolicy: "all"
   })
 
-  return data
+  return data as SignInMutation
 }
 
 export async function signUp(
@@ -153,5 +166,5 @@ export async function signUp(
     errorPolicy: "all"
   })
 
-  return data as AuthMutation
+  return data as SignUpMutation
 }
