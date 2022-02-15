@@ -1,4 +1,4 @@
-import { getPlaces } from "../clients/apollo"
+import getPlaces from "../clients/apollo/queries/places"
 import Card from "../components/card"
 
 import { Container } from "../styles/pages"

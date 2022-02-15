@@ -1,3 +1,5 @@
+import Cookies from "js-cookie"
+
 import {
   ReactNode,
   createContext,
@@ -33,8 +35,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [data, setData] = useState({} as AuthState)
 
   useEffect(() => {
-    const token = localStorage.getItem("@TripEx:token")
-    const user = localStorage.getItem("@TripEx:user")
+    const token = Cookies.get("TripEx_token")
+    const user = Cookies.get("TripEx_user")
 
     if (token && user) {
       return setData({ token, user: JSON.parse(user) })
@@ -44,8 +46,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   }, [])
 
   const signIn = useCallback(({ user, token }: AuthState) => {
-    localStorage.setItem("@TripEx:token", String(token))
-    localStorage.setItem("@TripEx:user", JSON.stringify(user))
+    Cookies.set("TripEx_token", String(token))
+    Cookies.set("TripEx_user", JSON.stringify(user))
 
     setData({ token, user })
 
@@ -53,8 +55,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   }, [])
 
   const signOut = useCallback(() => {
-    localStorage.removeItem("@TripEx:token")
-    localStorage.removeItem("@TripEx:user")
+    Cookies.remove("TripEx_token")
+    Cookies.remove("TripEx_user")
 
     setData({} as AuthState)
   }, [])

@@ -1,7 +1,8 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { signIn as signInRequest, Error as ErrorType } from "../clients/apollo"
+import signInRequest from "../clients/apollo/mutations/signIn"
+import { Error as ErrorType } from "../clients/apollo"
 import { useAuth } from "../hooks/auth"
 
 import Button from "../components/button"

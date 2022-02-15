@@ -1,6 +1,6 @@
 import { useEffect, useState, FormEvent } from "react"
 import { RangeModifier } from "react-day-picker"
-import { getPlaces, PlacesFilters } from "../clients/apollo"
+import getPlaces, { PlacesFilters } from "../clients/apollo/queries/places"
 import debounce from "lodash.debounce"
 import Button from "../components/button"
 import Card from "../components/card"

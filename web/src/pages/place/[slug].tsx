@@ -1,7 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { getPlaceBySlug, getPlacesSlugs } from "../../clients/apollo"
+import getPlaceBySlug from "../../clients/apollo/queries/place"
+import getSlugs from "../../clients/apollo/queries/slugs"
+
 import {
   PersonIcon,
   Cross2Icon,
@@ -134,7 +136,7 @@ export async function getStaticProps({ params }: QueryProps) {
 }
 
 export async function getStaticPaths() {
-  const places = await getPlacesSlugs()
+  const places = await getSlugs()
 
   return {
     paths: places.map(place => ({
